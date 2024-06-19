@@ -69,7 +69,7 @@ jobs:
           DESTDIR=`pwd`/dest make install
           tar -C dest -cf libideviceactivation.tar usr
     - name: publish artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: libideviceactivation-latest_${{env.target_triplet}}
         path: libideviceactivation.tar
@@ -152,7 +152,7 @@ jobs:
           DESTDIR=`pwd`/dest make install
           tar -C dest -cf libideviceactivation.tar usr
     - name: publish artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: libideviceactivation-latest_macOS
         path: libideviceactivation.tar
@@ -238,7 +238,7 @@ jobs:
           DESTDIR=`pwd`/dest make install
           tar -C dest -cf libideviceactivation.tar ${{ env.dest }}
     - name: publish artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: libideviceactivation-latest_${{ matrix.arch }}-${{ env.dest }}
         path: libideviceactivation.tar
